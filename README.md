@@ -17,5 +17,11 @@ resources -> views -> layouts-> layout.blade.php aanmaken
 link href = "   {{  asset(' css/app.css') }} " rel= "stylesheet" >  
 link href = "   {{  asset(' js/app.js') }} " rel= "stylesheet" >  in header plaatsen
 
+## Routing regelen 
+route:resource ('/admin/companies', CompanyController::class); 
+als je admin map aanmaakt let op   In de Http -> Controllers maak je een Admin map  : 
+namespace App\Http\Controllers\Admin; 
+ use App\Htpp\Controllers\Controller 
+
 
 
