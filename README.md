@@ -23,5 +23,11 @@ als je admin map aanmaakt let op   In de Http -> Controllers maak je een Admin m
 namespace App\Http\Controllers\Admin; 
  use App\Htpp\Controllers\Controller 
 
+ ## in de model 
+ protected Fillable ['array invullen'] bij model
+ use app gebruiken bij Seeder 
+ & Database seeder $this call geven 
+ in factory faker gebruiken. 
+
 
 

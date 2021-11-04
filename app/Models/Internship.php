@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Internship extends Model
 {
     use HasFactory;
+
+    public function practicalteacher()
+    {
+        return $this->belongsTo(PracticalTeacher::class); 
+    }
+
+    public function students()
+    {
+        return $this->hasMany(Student::class); 
+    }
+
+
 }

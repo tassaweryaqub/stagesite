@@ -15,7 +15,10 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        //* We gebruiken de variable companies en de methode ALL om alle gegevens op te halen van de Company en returnen de index
+        $companies = Company::all(); 
+        return view('admin.companies.index', compact('companies')); 
+        
     }
 
     /**

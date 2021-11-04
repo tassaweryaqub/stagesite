@@ -23,6 +23,10 @@ class CompanyFactory extends Factory
     {
         return [
             //
+            'name' => $this->faker->name, 
+            'details' =>$this->faker->text
+          
+
         ];
     }
 }

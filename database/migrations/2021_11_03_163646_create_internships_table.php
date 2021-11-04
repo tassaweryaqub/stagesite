@@ -15,6 +15,7 @@ class CreateInternshipsTable extends Migration
     {
         Schema::create('internships', function (Blueprint $table) {
             $table->id();
+            $table->string('stagestatus'); 
             $table->timestamps();
         });
     }
