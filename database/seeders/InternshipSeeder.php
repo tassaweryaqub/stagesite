@@ -2,10 +2,7 @@
 
 namespace Database\Seeders;
 
-<<<<<<< HEAD
 use App\Models\Internship;
-=======
->>>>>>> 3de97244130c3762427669c9f0f8c75c86e6e3c3
 use Illuminate\Database\Seeder;
 
 class InternshipSeeder extends Seeder
@@ -18,7 +15,6 @@ class InternshipSeeder extends Seeder
     public function run()
     {
         //
-<<<<<<< HEAD
         $status = Internship::factory()->create([
             'stagestatus' => 'Zoek Stagiare',
 
@@ -33,7 +29,5 @@ class InternshipSeeder extends Seeder
         // ->times(5)
         // ->create();
 
-=======
->>>>>>> 3de97244130c3762427669c9f0f8c75c86e6e3c3
     }
 }
