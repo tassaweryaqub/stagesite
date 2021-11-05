@@ -23,7 +23,10 @@ class InternshipFactory extends Factory
     {
         return [
             //
+<<<<<<< HEAD
             'stagestatus' => $this->faker->name, 
+=======
+>>>>>>> 3de97244130c3762427669c9f0f8c75c86e6e3c3
         ];
     }
 }
