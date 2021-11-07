@@ -15,6 +15,9 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('internship_id')->constrained('internships')
+            ->onUpdate('no action')->onDelete('no action'); 
+            
             $table->string('name', 100); 
             $table->mediumText('details'); 
             $table->timestamps();
