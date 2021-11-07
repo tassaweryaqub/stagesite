@@ -9,15 +9,14 @@ class Internship extends Model
 {
     use HasFactory;
 
-    public function practicalteacher()
-    {
-        return $this->belongsTo(PracticalTeacher::class); 
-    }
+    protected $fillable = ['name', 'company_id']; 
 
-    public function students()
-    {
-        return $this->hasMany(Student::class); 
-    }
+  public function company()
+  {
+      return $this->belongsTo(Company::class); 
+  }
+
+  
 
 
 }

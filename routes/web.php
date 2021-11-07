@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Admin\InternshipController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 
 Route::resource('admin/companies', CompanyController::class); 
+Route::resource('admin/internships', InternshipController::class); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');

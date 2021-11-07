@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Internship;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,11 @@ class InternshipController extends Controller
      */
     public function index()
     {
-        //
+                //* We gebruiken de variable internships en de methode ALL om alle gegevens op te halen van de Internship en returnen de index
+                $internships = Internship::all(); 
+                return view('admin.internships.index', compact('internships')); 
+
+
     }
 
     /**

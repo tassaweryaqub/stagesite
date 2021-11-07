@@ -13,20 +13,12 @@ class Company extends Model
 
 //* Een bedrijf (company) heeft/ kan meerdere students
 
-    public function students()
 
+    public function internships()
     {
-        return $this->hasMany(Student::class); 
+        return $this->hasMany(Internship::class); 
     }
 
-    public function internship()
-    {
-        return $this->belongsTo(Internship::class); 
-    }
 
-    public function practicalteacher()
-    {
-        return $this->belongsTo(PracticalTeacher::class); 
-    }
 
 }
