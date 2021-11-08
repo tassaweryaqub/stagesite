@@ -54,15 +54,13 @@
                 <div class="text-sm text-gray-900">Naam</div>
                 <div class="text-sm text-gray-500">  {{ $internship->name }}</div>
               </td>
-              {{-- <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">CompanyDetails</div>
-                <div class="text-sm text-gray-500">  {{ $internship->company->details }}</div>
-              </td> --}}
 
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-500">  {{ $internship->company_id }}</div>
                 <div class="text-sm text-gray-900">Company_ID</div>
               </td>
+
+       
               <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
 {{--            

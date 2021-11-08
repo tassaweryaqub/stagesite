@@ -14,12 +14,10 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('internship_id')->constrained('internships')
-            ->onUpdate('no action')->onDelete('no action'); 
-            
+            $table->id();           
             $table->string('name', 100); 
             $table->mediumText('details'); 
+            $table->mediumText('stagestatus', 30); 
             $table->timestamps();
         });
     }

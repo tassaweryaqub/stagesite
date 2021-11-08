@@ -40,6 +40,14 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         //
+        $companies = new Company(); 
+        $companies->name = $request->name;
+        $companies->stagestatus = $request->stagestatus; 
+        $companies->company_id =$request->company_id; 
+        $companies->save(); 
+
+        return redirect()->route('companies.index')->with('status', 'succesvol aangemaakt!' ); 
+
     }
 
     /**

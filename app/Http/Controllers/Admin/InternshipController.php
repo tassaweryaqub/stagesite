@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Models\Internship;
 use Illuminate\Http\Request;
 
@@ -30,6 +31,9 @@ class InternshipController extends Controller
     public function create()
     {
         //
+        $companies = Company::all(); 
+        return view ('admin.internships.create', compact('companies')); 
+
     }
 
     /**
@@ -41,6 +45,14 @@ class InternshipController extends Controller
     public function store(Request $request)
     {
         //
+        $internship = new Internship(); 
+        $internship->name = $request->name;
+        $internship->stagestatus = $request->stagestatus; 
+        $internship->company_id =$request->company_id; 
+        $internship->save(); 
+
+        return redirect()->route('internships.index')->with('status', 'succesvol aangemaakt!' ); 
+
     }
 
     /**

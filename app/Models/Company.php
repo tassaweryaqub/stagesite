@@ -9,7 +9,7 @@ class Company extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'details']; 
+    protected $fillable = ['name', 'details', 'stagestatus']; 
 
 //* Een bedrijf (company) heeft/ kan meerdere students
 
