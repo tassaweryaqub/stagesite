@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\InternshipController;
+use App\Http\Controllers\Admin\PracticalTeacherController;
+use App\Http\Controllers\Admin\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,8 @@ Route::get('/', function () {
 
 Route::resource('admin/companies', CompanyController::class); 
 Route::resource('admin/internships', InternshipController::class); 
+Route::resource('admin/practicalteachers', PracticalTeacherController::class); 
+Route::resource('admin/students', StudentController::class); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');

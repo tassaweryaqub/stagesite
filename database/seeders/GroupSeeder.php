@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Practicalteacher;
 use Illuminate\Database\Seeder;
 
-class PracticalteacherSeeder extends Seeder
+class GroupSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,8 +14,5 @@ class PracticalteacherSeeder extends Seeder
     public function run()
     {
         //
-        Practicalteacher::factory()
-        ->times(5)
-        ->create();
     }
 }

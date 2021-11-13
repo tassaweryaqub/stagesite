@@ -23,6 +23,10 @@ class StudentFactory extends Factory
     {
         return [
             //
+
+            'name' => $this->faker->name, 
+
+
         ];
     }
 }

@@ -17,7 +17,7 @@ class InternshipSeeder extends Seeder
         //
 
         Internship::factory()
-        ->times(5)
+        ->times(8)
         ->create();
     }
 }

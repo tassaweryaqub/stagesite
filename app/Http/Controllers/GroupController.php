@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Student;
+use App\Models\Group;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class GroupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-   //* We gebruiken de variable students en de methode ALL om alle gegevens op te halen van de Student en returnen de index
-                $students = Student::all(); 
-                return view('admin.students.index', compact('students')); 
+        //
     }
 
     /**
@@ -44,10 +41,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(Group $group)
     {
         //
     }
@@ -55,10 +52,10 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(Group $group)
     {
         //
     }
@@ -67,10 +64,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, Group $group)
     {
         //
     }
@@ -78,10 +75,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Group $group)
     {
         //
     }

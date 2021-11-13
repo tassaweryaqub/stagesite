@@ -17,19 +17,34 @@
           <thead class="bg-gray-50">
             <tr>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                ID
+                InternShip_ID
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Name
+                Student_ID
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Studentname
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Company_ID
               </th>
-             
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Company Details
+              </th>
+
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                PracticalTeacherName
+              </th>
+
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Practical Description
+              </th>
+    
+    
         
      
                 <button class=" float-right mr-6 btn bg-green-500 hover:bg-green-400 text-white">
-                    <a href="{{ route('companies.create')  }}">Create</a>
+                    <a href="{{ route('internships.create')  }}">Create</a>
                   </button>
        
             </tr>
@@ -51,14 +66,43 @@
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">Naam</div>
-                <div class="text-sm text-gray-500">  {{ $internship->name }}</div>
+                <div class="text-sm text-gray-900">Student_ID</div>
+                <div class="text-sm text-gray-500">  {{ $internship->student_id }}</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">StudentName</div>
+                <div class="text-sm text-gray-500">  {{ $internship->student->name }}</div>
               </td>
 
               <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-500">  {{ $internship->company_id }}</div>
                 <div class="text-sm text-gray-900">Company_ID</div>
+                <div class="text-sm text-gray-500">  {{ $internship->company_id }}</div>
+            
               </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">Company Details</div>
+                <div class="text-sm text-gray-500">  {{ $internship->company->details }}</div>
+         
+              </td>
+
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">PracticalTeacherName</div>
+                <div class="text-sm text-gray-500">  {{ $internship->practicalteacher->name}}</div>
+              </td>
+
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">Practical Description</div>
+                <div class="text-sm text-gray-500">  {{ $internship->practicalteacher->description}}</div>
+              </td>
+
+
+
+
+
+
+
+
+
 
        
               <td class="px-6 py-4 whitespace-nowrap">

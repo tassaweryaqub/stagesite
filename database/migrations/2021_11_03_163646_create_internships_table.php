@@ -17,7 +17,10 @@ class CreateInternshipsTable extends Migration
             $table->id();
             $table->foreignId('company_id')->constrained()
             ->onUpdate('cascade')->onDelete('cascade'); 
-            $table->string('name', 50); 
+            $table->foreignId('practicalteacher_id')->constrained('practicalteachers')
+            ->onUpdate('cascade')->onDelete('cascade'); 
+            $table->foreignId('student_id')->constrained('students')
+            ->onUpdate('cascade')->onDelete('cascade'); 
             $table->timestamps();
         });
     }

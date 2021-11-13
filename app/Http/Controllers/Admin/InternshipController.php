@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Company;
 use App\Models\Internship;
+use App\Models\Practicalteacher;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class InternshipController extends Controller
@@ -16,9 +18,11 @@ class InternshipController extends Controller
      */
     public function index()
     {
-                //* We gebruiken de variable internships en de methode ALL om alle gegevens op te halen van de Internship en returnen de index
+                //* We gebruiken de variable internships en de methode ALL om alle gegevens op te halen van de Internship/ Practical en Student en returnen de index
                 $internships = Internship::all(); 
-                return view('admin.internships.index', compact('internships')); 
+                $practicalteachers = Practicalteacher::all(); 
+                $students = Student::all(); 
+                return view('admin.internships.index', compact('internships', 'practicalteachers', 'students')); 
 
 
     }
@@ -32,7 +36,11 @@ class InternshipController extends Controller
     {
         //
         $companies = Company::all(); 
-        return view ('admin.internships.create', compact('companies')); 
+
+        $practicalteachers = PracticalTeacher::all(); 
+
+         $students = Student::all(); 
+        return view ('admin.internships.create', compact('companies', 'practicalteachers', 'students')); 
 
     }
 
@@ -45,13 +53,7 @@ class InternshipController extends Controller
     public function store(Request $request)
     {
         //
-        $internship = new Internship(); 
-        $internship->name = $request->name;
-        $internship->stagestatus = $request->stagestatus; 
-        $internship->company_id =$request->company_id; 
-        $internship->save(); 
 
-        return redirect()->route('internships.index')->with('status', 'succesvol aangemaakt!' ); 
 
     }
 

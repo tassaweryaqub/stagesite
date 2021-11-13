@@ -20,26 +20,19 @@
                 ID
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                CompanyName
+                PracticalName
               </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-green-500 uppercase tracking-wider">
-                Stagestatus
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                CompanyDetails
-              </th>
-             
-        
+      
      
                 <button class=" float-right mr-6 btn bg-green-500 hover:bg-green-400 text-white">
-                    <a href="{{ route('companies.create')  }}">Create</a>
+                    <a href="{{ route('practicalteachers.create')  }}">Create</a>
                   </button>
        
             </tr>
           </thead>
 
           <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach ( $companies as $company)
+                    @foreach ( $practicalteachers as $practicalteacher)
             <tr>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
@@ -48,40 +41,31 @@
                           Id
                     </div>
                     <div class="text-sm text-gray-500">
-                     {{ $company->id }}
+                     {{ $practicalteacher->id }}
                     </div>
                   </div>
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">CompanyName</div>
-                <div class="text-sm text-gray-500">  {{ $company->name }}</div>
+                <div class="text-sm text-gray-500">  {{ $practicalteacher->name }}</div>
               </td>
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">StageStatus</div>
-                <div class="text-sm text-gray-500">  {{ $company->stagestatus}}</div>
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">CompanyDetails</div>
-                <div class="text-sm text-gray-500">  {{ $company->details }}</div>
-              </td>
-           
+ 
 
 
               <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-     
-                  <a href="{{ route('companies.show', ['company'=> $company->id ]) }}">Show</a>
+{{--            
+                  <a href="{{ route('categories.show', ['category'=> $category->id ]) }}">Show</a>
                 </span>
               </td>
-
-               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                <a href="{{ route('companies.edit', ['company'=> $company->id ]) }}">Edit</a>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <a href="{{ route('categories.edit', ['category'=> $category->id ]) }}">Edit</a>
               </td>
-              {{-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="{{ route('categories.delete', ['category'=> $category->id]) }}" class="text-red-600 hover:text-red-900">Delete</a>
-              </td> 
-            </tr>  --}}
+              </td> --}}
+            </tr>
 
 
             @endforeach
