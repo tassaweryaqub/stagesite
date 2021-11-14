@@ -78,10 +78,10 @@
                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                 <a href="{{ route('companies.edit', ['company'=> $company->id ]) }}">Edit</a>
               </td>
-              {{-- <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="{{ route('categories.delete', ['category'=> $category->id]) }}" class="text-red-600 hover:text-red-900">Delete</a>
+              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <a href="{{ route('companies.delete', ['company'=> $company->id]) }}" class="text-red-600 hover:text-red-900">Delete</a>
               </td> 
-            </tr>  --}}
+            </tr> 
 
 
             @endforeach

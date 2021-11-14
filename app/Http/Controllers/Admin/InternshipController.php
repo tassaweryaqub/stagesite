@@ -53,6 +53,14 @@ class InternshipController extends Controller
     public function store(Request $request)
     {
         //
+        $internship = new Internship(); 
+        $internship->company_id = $request->company_id;
+        $internship->practicalteacher_id = $request->practicalteacher_id; 
+        $internship->student_id = $request->student_id; 
+        $internship->save(); 
+
+        return redirect()->route('internships.index')->with('status', 'succesvol aangemaakt!' ); 
+ 
 
 
     }

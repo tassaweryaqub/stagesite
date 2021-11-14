@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CompanyStoreRequest extends FormRequest
+class InternshipStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,12 @@ class CompanyStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            // * Request regels toevoegen die je gebruikt in de formulier 
-             'name'  => 'required|string|unique:companies|min:5|max:50', 
-             'stagestatus'  => 'required|string|min:5|max:30' ,
-             'details'  => 'required|string|min:5|max:30' 
+            // * let op hier kijken we in de store of de waardes ingevuld zijn 
+            'company_id' => 'required|integer',  
+            'practicalteacher_id' => 'required|integer', 
+            'student_id' => 'required|integer', 
+
+
         ];
     }
 }

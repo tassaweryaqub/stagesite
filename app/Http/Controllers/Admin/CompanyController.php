@@ -100,6 +100,12 @@ class CompanyController extends Controller
             return redirect()->route('companies.index')->with('status', 'Company Succesvol Geupdate!'); 
     }
 
+
+        public function delete(Company $company)
+        {
+            return view('admin.companies.delete', compact('company')); 
+        }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -109,5 +115,8 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         //
+
+                $company->delete();
+                return redirect()->route('companies.index')->with('status', 'Company Verwijderd !'); 
     }
 }

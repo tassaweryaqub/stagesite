@@ -27,6 +27,12 @@ Route::resource('admin/internships', InternshipController::class);
 Route::resource('admin/practicalteachers', PracticalTeacherController::class); 
 Route::resource('admin/students', StudentController::class); 
 
+Route::get('admin/companies/{company}/delete', [CompanyController::class, 'delete'])
+->name ('companies.delete'); 
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

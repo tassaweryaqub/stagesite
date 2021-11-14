@@ -31,7 +31,7 @@
         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="details">
           Company Details
         </label>
-        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('details') border-red-500 @enderror" name="details" id="details"  type="text" placeholder="Lorem Ipsum" required  >
+        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('details') border-red-500 @enderror"  value="{{ old('details', $company->details) }}" name="details" id="details"  type="text" placeholder="Lorem Ipsum" required  >
       </div>
     </div>
     <div class="flex flex-wrap -mx-3 mb-2">
@@ -41,7 +41,7 @@
         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="details">
           StageStatus
         </label>
-        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('stagestatus') border-red-500 @enderror" name="stagestatus" id="stagestatus"  type="text" placeholder="Huidige Status" required  >
+        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('stagestatus') border-red-500 @enderror"  value="{{ old('stagestatus', $company->stagestatus) }}" name="stagestatus" id="stagestatus"  type="text" placeholder="Huidige Status" required  >
       </div>
     </div>
 
