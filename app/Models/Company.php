@@ -9,7 +9,7 @@ class Company extends Model
 {
     use HasFactory;
 
-    // protected $fillable = ['name', 'details', 'stagestatus']; 
+    protected $fillable = ['name', 'details', 'stagestatus', 'student_id']; 
 
 //* Een bedrijf (company) heeft/ kan meerdere students
 
@@ -17,6 +17,11 @@ class Company extends Model
     public function internships()
     {
         return $this->hasMany(Internship::class); 
+    }
+
+    public function students()
+    {
+        return $this->hasMany(Student::class); 
     }
 
 

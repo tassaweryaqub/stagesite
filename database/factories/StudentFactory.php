@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -25,6 +26,8 @@ class StudentFactory extends Factory
             //
 
             'name' => $this->faker->name, 
+            'company_id' => Company::all()->random()->id,
+
 
 
         ];

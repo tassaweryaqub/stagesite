@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Company;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CompanyFactory extends Factory
@@ -26,6 +27,7 @@ class CompanyFactory extends Factory
             'name' => $this->faker->name, 
             'details' =>$this->faker->text, 
             'stagestatus' => 'Nog niet bekend'
+
           
 
         ];
