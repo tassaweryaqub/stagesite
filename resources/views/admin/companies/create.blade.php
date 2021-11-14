@@ -36,13 +36,21 @@
     <div class="flex flex-wrap -mx-3 mb-2">
 
         
-      <div class="w-full ml-5 md:w-1/4 px-3">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="details">
-          StageStatus
-        </label>
-        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('stagestatus') border-red-500 @enderror" name="stagestatus" id="stagestatus"  type="text" placeholder="Huidige Status" required  >
-      </div>
-    </div>
+        <div class="w-full md:w-auto  px-3  mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="stagestatus">
+             Stagestatus
+            </label>
+            <select class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline " name="company_id" id="company_id">
+                @foreach ($companies as $company)  
+                <option value="{{ $company->id }}"
+                    @if (old('company_id') == $company->id)
+                    selected                 
+                    @endif
+                    >{{ $company->stagestatus}}
+                </option>    
+                @endforeach     
+            </select>
+          </div>
 
     <div class="ml-5 mt-5 flex justify-start">
       <button id="submit" class="mt-10  bg-green-500 hover:bg-green-700 text-white font-bold  py-2 px-4 rounded" >

@@ -31,8 +31,8 @@ class CompanyController extends Controller
     public function create()
     {
         //*  view returnen naar create.store 
-
-        return view('admin.companies.create'); 
+        $companies = Company::all(); 
+        return view('admin.companies.create', compact('companies')); 
     }
 
     /**
