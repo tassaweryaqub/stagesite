@@ -22,6 +22,9 @@
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 StudentName
               </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                CompanyName
+              </th>
      
         
      
@@ -51,6 +54,12 @@
                 <div class="text-sm text-gray-900">StudentName</div>
                 <div class="text-sm text-gray-500">  {{ $student->name }}</div>
               </td>
+
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">CompanyName</div>
+                <div class="text-sm text-gray-500">  {{ $student->company->name }}</div>
+              </td>
+   
    
            
 

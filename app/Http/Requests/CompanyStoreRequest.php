@@ -26,7 +26,7 @@ class CompanyStoreRequest extends FormRequest
         return [
             // * Request regels toevoegen die je gebruikt in de formulier 
              'name'  => 'required|string|unique:companies|min:5|max:50', 
-             'stagestatus'  => 'required|string|min:5|max:30' ,
+             'stagestatus'  => 'required',
              'details'  => 'required|string|min:5|max:30' 
         ];
     }

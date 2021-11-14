@@ -27,7 +27,7 @@ class CompanyUpdateRequest extends FormRequest
         return [
             //* we halen vanuit de route van company de ID op en kijken of de naam overeenkomt tijdens de EDIT / Update methode
             'name'  => 'required|string|unique:companies,name|min:5|max:50,'.$company->id , 
-            'stagestatus'  => 'required|string|min:5|max:30',
+            'stagestatus'  => 'required',
             'details'  => 'required|string|min:5|max:30' 
 
         ];
