@@ -27,10 +27,14 @@ class StudentFactory extends Factory
             //
 
             'name' => $this->faker->name, 
+<<<<<<< HEAD
             'review' => 'De review van student', 
             'rating' =>$this->faker->randomNumber(1), 
             'company_id' => Company::all()->random()->id,
             'technic_id' => Technic::all()->random()->id,
+=======
+            'company_id' => Company::all()->random()->id,
+>>>>>>> 2fec473016d1be0d88fc80518408d8a3b0496bc2
 
 
 

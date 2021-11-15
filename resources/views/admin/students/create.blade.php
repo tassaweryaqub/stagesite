@@ -43,6 +43,7 @@
             </select>
           </div>
 
+<<<<<<< HEAD
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="review">
               Review
@@ -75,6 +76,8 @@
             </select>
           </div>
 
+=======
+>>>>>>> 2fec473016d1be0d88fc80518408d8a3b0496bc2
     <div class="ml-5 mt-5 flex justify-start">
       <button id="submit" class="mt-10  bg-green-500 hover:bg-green-700 text-white font-bold  py-2 px-4 rounded" >
         Submit

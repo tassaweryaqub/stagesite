@@ -25,6 +25,7 @@
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 CompanyName
               </th>
+<<<<<<< HEAD
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Student Review
               </th>
@@ -35,6 +36,8 @@
                 Used Technic 
               </th>
      
+=======
+>>>>>>> 2fec473016d1be0d88fc80518408d8a3b0496bc2
      
         
      
@@ -69,6 +72,7 @@
                 <div class="text-sm text-gray-900">CompanyName</div>
                 <div class="text-sm text-gray-500">  {{ $student->company->name }}</div>
               </td>
+<<<<<<< HEAD
 
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">Review</div>
@@ -85,6 +89,8 @@
                 <div class="text-sm text-gray-500">  {{ $student->technic->name }}</div>
               </td>
    
+=======
+>>>>>>> 2fec473016d1be0d88fc80518408d8a3b0496bc2
    
    
            
