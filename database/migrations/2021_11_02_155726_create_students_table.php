@@ -22,15 +22,12 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->foreignId('company_id')->constrained('companies')
             ->onUpdate('cascade')->onDelete('cascade'); 
-<<<<<<< HEAD
 
             $table->foreignId('technic_id')->constrained('technics')
             ->onUpdate('cascade')->onDelete('cascade'); 
 
             $table->string('review', 30); 
             $table->tinyInteger('rating');
-=======
->>>>>>> 2fec473016d1be0d88fc80518408d8a3b0496bc2
             $table->string('name', 30); 
             $table->timestamps();
         });
