@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Company;
+
 use App\Models\Student;
 use App\Models\Technic;
 use Illuminate\Http\Request;
@@ -23,6 +24,8 @@ class StudentController extends Controller
                 $companies = Company::all(); 
 
                 $technics = Technic::all(); 
+
+                
                 return view('admin.students.index', compact('students', 'companies', 'technics')); 
     }
 
@@ -40,6 +43,8 @@ class StudentController extends Controller
         $companies = Company::all(); 
 
         $technics = Technic::all(); 
+
+    
 
         return view('admin.students.create', compact('students', 'companies', 'technics')); 
     }
@@ -60,6 +65,7 @@ class StudentController extends Controller
         $student-> rating = $request->rating; 
         $student->company_id = $request->company_id;
         $student->technic_id = $request->technic_id;
+   
       
 
         $student->save(); 

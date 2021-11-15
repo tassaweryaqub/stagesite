@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Company;
+use App\Models\Group;
 use App\Models\Student;
 use App\Models\Technic;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -31,6 +32,7 @@ class StudentFactory extends Factory
             'rating' =>$this->faker->randomNumber(1), 
             'company_id' => Company::all()->random()->id,
             'technic_id' => Technic::all()->random()->id,
+     
 
 
 
