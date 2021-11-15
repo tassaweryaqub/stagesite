@@ -42,14 +42,10 @@ class StudentController extends Controller
         $students = Student::all(); 
 
         $companies = Company::all(); 
-<<<<<<< HEAD
 
         $technics = Technic::all(); 
 
         return view('admin.students.create', compact('students', 'companies', 'technics')); 
-=======
-        return view('admin.students.create', compact('students', 'companies')); 
->>>>>>> 2fec473016d1be0d88fc80518408d8a3b0496bc2
     }
 
     /**
@@ -64,7 +60,6 @@ class StudentController extends Controller
 
         $student = new Student(); 
         $student->name = $request->name; 
-<<<<<<< HEAD
         $student->review = $request->review; 
         $student-> rating = $request->rating; 
         $student->company_id = $request->company_id;
@@ -74,12 +69,6 @@ class StudentController extends Controller
         $student->save(); 
 
         return redirect()->route('students.index')->with('status', 'succesvol aangemaakt!'); 
-=======
-        $student->company_id = $request->company_id;
-        $student->save(); 
-
-        return redirect()->route('students.index')->with('status', 'succesvol aangemaakt!' ); 
->>>>>>> 2fec473016d1be0d88fc80518408d8a3b0496bc2
     }
 
     /**

@@ -18,10 +18,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CompanySeeder::class, 
-<<<<<<< HEAD
             TechnicSeeder::class, 
-=======
->>>>>>> 2fec473016d1be0d88fc80518408d8a3b0496bc2
             StudentSeeder::class,  
             PracticalteacherSeeder::class,
             InternshipSeeder::class, 
