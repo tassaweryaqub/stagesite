@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\PracticalTeacher;
+use App\Http\Controllers\Controller;
+use App\Models\Practicalteacher;
 use Illuminate\Http\Request;
 
-class PracticalTeacherController extends Controller
+class PracticalteacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class PracticalTeacherController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PracticalTeacher  $practicalTeacher
+     * @param  \App\Models\Practicalteacher  $practicalteacher
      * @return \Illuminate\Http\Response
      */
-    public function show(PracticalTeacher $practicalTeacher)
+    public function show(Practicalteacher $practicalteacher)
     {
         //
     }
@@ -52,10 +53,10 @@ class PracticalTeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PracticalTeacher  $practicalTeacher
+     * @param  \App\Models\Practicalteacher  $practicalteacher
      * @return \Illuminate\Http\Response
      */
-    public function edit(PracticalTeacher $practicalTeacher)
+    public function edit(Practicalteacher $practicalteacher)
     {
         //
     }
@@ -64,10 +65,10 @@ class PracticalTeacherController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PracticalTeacher  $practicalTeacher
+     * @param  \App\Models\Practicalteacher  $practicalteacher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PracticalTeacher $practicalTeacher)
+    public function update(Request $request, Practicalteacher $practicalteacher)
     {
         //
     }
@@ -75,10 +76,10 @@ class PracticalTeacherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PracticalTeacher  $practicalTeacher
+     * @param  \App\Models\Practicalteacher  $practicalteacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PracticalTeacher $practicalTeacher)
+    public function destroy(Practicalteacher $practicalteacher)
     {
         //
     }

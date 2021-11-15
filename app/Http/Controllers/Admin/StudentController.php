@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Models\Student;
+use App\Models\Technic;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -14,7 +17,13 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+   //* We gebruiken de variable students en de methode ALL om alle gegevens op te halen van de Student en returnen de index
+                $students = Student::all(); 
+
+                $companies = Company::all(); 
+
+                $technics = Technic::all(); 
+                return view('admin.students.index', compact('students', 'companies', 'technics')); 
     }
 
     /**
@@ -24,7 +33,15 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        // * in de create maken we gebruik van de Company model en halen alle gegevens op
+
+        $students = Student::all(); 
+
+        $companies = Company::all(); 
+
+        $technics = Technic::all(); 
+
+        return view('admin.students.create', compact('students', 'companies', 'technics')); 
     }
 
     /**
@@ -35,7 +52,19 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //* We maken een nieuwe Student class met de Company_id erin die we storen in het formulier van students.create 
+
+        $student = new Student(); 
+        $student->name = $request->name; 
+        $student->review = $request->review; 
+        $student-> rating = $request->rating; 
+        $student->company_id = $request->company_id;
+        $student->technic_id = $request->technic_id;
+      
+
+        $student->save(); 
+
+        return redirect()->route('students.index')->with('status', 'succesvol aangemaakt!'); 
     }
 
     /**

@@ -17,36 +17,41 @@
           <thead class="bg-gray-50">
             <tr>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                ID
+                InternShip_ID
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                StudentName
+                Student_ID
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                CompanyName
+                Studentname
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Student Review
+                Company_ID
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Student Rating
+                Company Details
               </th>
+
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Used Technic 
+                PracticalTeacherName
               </th>
-     
-     
+
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Practical Description
+              </th>
+    
+    
         
      
                 <button class=" float-right mr-6 btn bg-green-500 hover:bg-green-400 text-white">
-                    <a href="{{ route('students.create')  }}">Create</a>
+                    <a href="{{ route('internships.create')  }}">Create</a>
                   </button>
        
             </tr>
           </thead>
 
           <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach ( $students as $student)
+                    @foreach ( $internships as $internship)
             <tr>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
@@ -55,41 +60,51 @@
                           Id
                     </div>
                     <div class="text-sm text-gray-500">
-                     {{ $student->id }}
+                     {{ $internship->id }}
                     </div>
                   </div>
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">Student_ID</div>
+                <div class="text-sm text-gray-500">  {{ $internship->student_id }}</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">StudentName</div>
-                <div class="text-sm text-gray-500">  {{ $student->name }}</div>
+                <div class="text-sm text-gray-500">  {{ $internship->student->name }}</div>
               </td>
 
               <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">CompanyName</div>
-                <div class="text-sm text-gray-500">  {{ $student->company->name }}</div>
+                <div class="text-sm text-gray-900">Company_ID</div>
+                <div class="text-sm text-gray-500">  {{ $internship->company_id }}</div>
+            
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">Company Details</div>
+                <div class="text-sm text-gray-500">  {{ $internship->company->details }}</div>
+         
               </td>
 
               <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">Review</div>
-                <div class="text-sm text-gray-500">  {{ $student->review }}</div>
+                <div class="text-sm text-gray-900">PracticalTeacherName</div>
+                <div class="text-sm text-gray-500">  {{ $internship->practicalteacher->name}}</div>
               </td>
 
               <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">Rating</div>
-                <div class="text-sm text-gray-500">  {{ $student->rating }}</div>
+                <div class="text-sm text-gray-900">Practical Description</div>
+                <div class="text-sm text-gray-500">  {{ $internship->practicalteacher->description}}</div>
               </td>
 
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">TechnicName</div>
-                <div class="text-sm text-gray-500">  {{ $student->technic->name }}</div>
-              </td>
-   
-   
-   
-           
 
 
+
+
+
+
+
+
+
+       
               <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
 {{--            

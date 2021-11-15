@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller; 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CompanyStoreRequest;
+use App\Http\Requests\CompanyUpdateRequest;
 use App\Models\Company;
 use Illuminate\Http\Request;
 
@@ -28,7 +30,9 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        //*  view returnen naar create.store 
+        $companies = Company::all(); 
+        return view('admin.companies.create', compact('companies')); 
     }
 
     /**
@@ -37,9 +41,19 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CompanyStoreRequest $request)
     {
-        //
+        //* Hierbij heb je eigenlijk geen PROTECTED Fillable nodig , maar kan geen kwaad om het toch te laten staan. 
+
+        $company = new Company(); 
+        $company->name = $request->name;
+        $company->stagestatus = $request->stagestatus; 
+        $company->details = $request->details; 
+        $company->save(); 
+
+        return redirect()->route('companies.index')->with('status', 'succesvol aangemaakt!' ); 
+ 
+
     }
 
     /**
@@ -50,7 +64,8 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        //
+        //! je gebruikt de variable company van de show methode
+        return view('admin.companies.show', compact('company')); 
     }
 
     /**
@@ -61,7 +76,9 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
+        //* return de view van de edit door gebruik te maken van de variable company
+
+        return view('admin.companies.edit', compact('company')); 
     }
 
     /**
@@ -71,10 +88,23 @@ class CompanyController extends Controller
      * @param  \App\Models\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(CompanyUpdateRequest $request, Company $company)
     {
-        //
+        //! LET OP bij de update gebruiken we geen NEW COMPANY () omdat we bestaande aanpassen
+
+        $company->name = $request->name;
+        $company->stagestatus = $request->stagestatus; 
+        $company->details = $request->details; 
+        $company->save(); 
+    
+            return redirect()->route('companies.index')->with('status', 'Company Succesvol Geupdate!'); 
     }
+
+
+        public function delete(Company $company)
+        {
+            return view('admin.companies.delete', compact('company')); 
+        }
 
     /**
      * Remove the specified resource from storage.
@@ -85,5 +115,8 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         //
+
+                $company->delete();
+                return redirect()->route('companies.index')->with('status', 'Company Verwijderd !'); 
     }
 }

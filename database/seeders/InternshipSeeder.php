@@ -15,19 +15,9 @@ class InternshipSeeder extends Seeder
     public function run()
     {
         //
-        $status = Internship::factory()->create([
-            'stagestatus' => 'Zoek Stagiare',
 
-        ]); 
-        
-        $status = Internship::factory()->create([
-            'stagestatus' =>  'Zoekt geen Stagiare', 
-        ]); 
-
-
-        // Internship::factory()
-        // ->times(5)
-        // ->create();
-
+        Internship::factory()
+        ->times(8)
+        ->create();
     }
 }

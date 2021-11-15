@@ -20,10 +20,13 @@
                 ID
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Name
+                CompanyName
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-green-500 uppercase tracking-wider">
+                Stagestatus
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Details
+                CompanyDetails
               </th>
              
         
@@ -51,26 +54,34 @@
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">Naam</div>
+                <div class="text-sm text-gray-900">CompanyName</div>
                 <div class="text-sm text-gray-500">  {{ $company->name }}</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">StageStatus</div>
+                <div class="text-sm text-gray-500">  {{ $company->stagestatus}}</div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">CompanyDetails</div>
                 <div class="text-sm text-gray-500">  {{ $company->details }}</div>
               </td>
+           
+
+
               <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-{{--            
-                  <a href="{{ route('categories.show', ['category'=> $category->id ]) }}">Show</a>
+     
+                  <a href="{{ route('companies.show', ['company'=> $company->id ]) }}">Show</a>
                 </span>
               </td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                <a href="{{ route('categories.edit', ['category'=> $category->id ]) }}">Edit</a>
+
+               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <a href="{{ route('companies.edit', ['company'=> $company->id ]) }}">Edit</a>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="{{ route('categories.delete', ['category'=> $category->id]) }}" class="text-red-600 hover:text-red-900">Delete</a>
-              </td> --}}
-            </tr>
+                <a href="{{ route('companies.delete', ['company'=> $company->id]) }}" class="text-red-600 hover:text-red-900">Delete</a>
+              </td> 
+            </tr> 
 
 
             @endforeach

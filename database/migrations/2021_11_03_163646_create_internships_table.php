@@ -15,7 +15,12 @@ class CreateInternshipsTable extends Migration
     {
         Schema::create('internships', function (Blueprint $table) {
             $table->id();
-            $table->string('stagestatus'); 
+            $table->foreignId('company_id')->constrained()
+            ->onUpdate('cascade')->onDelete('cascade'); 
+            $table->foreignId('practicalteacher_id')->constrained('practicalteachers')
+            ->onUpdate('cascade')->onDelete('cascade'); 
+            $table->foreignId('student_id')->constrained('students')
+            ->onUpdate('cascade')->onDelete('cascade'); 
             $table->timestamps();
         });
     }

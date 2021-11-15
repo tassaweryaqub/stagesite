@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Company;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CompanyFactory extends Factory
@@ -22,9 +23,11 @@ class CompanyFactory extends Factory
     public function definition()
     {
         return [
-            //
+            //TODO  in de factory kan je standaard waarde meegeven en anders gebruik maken van FAKER 
             'name' => $this->faker->name, 
-            'details' =>$this->faker->text
+            'details' =>$this->faker->text, 
+            'stagestatus' => 'Nog niet bekend'
+
           
 
         ];

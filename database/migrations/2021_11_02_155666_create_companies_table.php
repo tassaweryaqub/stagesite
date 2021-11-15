@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\PracticalTeacher;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePracticalTeachersTable extends Migration
+class CreateCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +14,11 @@ class CreatePracticalTeachersTable extends Migration
      */
     public function up()
     {
-        Schema::create('practical_teachers', function (Blueprint $table) {
-            $table->id();
+        Schema::create('companies', function (Blueprint $table) {
+            $table->id();   
+            $table->string('name', 50); 
+            $table->mediumText('details', 30); 
+            $table->mediumText('stagestatus', 30); 
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreatePracticalTeachersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('practical_teachers');
+        Schema::dropIfExists('companies');
     }
 }

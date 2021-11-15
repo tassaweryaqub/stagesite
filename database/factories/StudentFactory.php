@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
 use App\Models\Student;
+use App\Models\Technic;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class StudentFactory extends Factory
@@ -23,6 +25,15 @@ class StudentFactory extends Factory
     {
         return [
             //
+
+            'name' => $this->faker->name, 
+            'review' => 'De review van student', 
+            'rating' =>$this->faker->randomNumber(1), 
+            'company_id' => Company::all()->random()->id,
+            'technic_id' => Technic::all()->random()->id,
+
+
+
         ];
     }
 }

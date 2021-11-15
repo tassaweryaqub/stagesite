@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PracticalteacherFactory extends Factory
+class GroupFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,10 +15,6 @@ class PracticalteacherFactory extends Factory
     {
         return [
             //
-
-            'name' => $this->faker->name, 
-            'description' => 'De student heeft de stageperiode met succes afgerond!' 
-
         ];
     }
 }

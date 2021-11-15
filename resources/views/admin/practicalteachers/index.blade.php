@@ -20,33 +20,19 @@
                 ID
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                StudentName
+                PracticalName
               </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                CompanyName
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Student Review
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Student Rating
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Used Technic 
-              </th>
-     
-     
-        
+      
      
                 <button class=" float-right mr-6 btn bg-green-500 hover:bg-green-400 text-white">
-                    <a href="{{ route('students.create')  }}">Create</a>
+                    <a href="{{ route('practicalteachers.create')  }}">Create</a>
                   </button>
        
             </tr>
           </thead>
 
           <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach ( $students as $student)
+                    @foreach ( $practicalteachers as $practicalteacher)
             <tr>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
@@ -55,39 +41,16 @@
                           Id
                     </div>
                     <div class="text-sm text-gray-500">
-                     {{ $student->id }}
+                     {{ $practicalteacher->id }}
                     </div>
                   </div>
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">StudentName</div>
-                <div class="text-sm text-gray-500">  {{ $student->name }}</div>
-              </td>
-
-              <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">CompanyName</div>
-                <div class="text-sm text-gray-500">  {{ $student->company->name }}</div>
+                <div class="text-sm text-gray-500">  {{ $practicalteacher->name }}</div>
               </td>
-
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">Review</div>
-                <div class="text-sm text-gray-500">  {{ $student->review }}</div>
-              </td>
-
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">Rating</div>
-                <div class="text-sm text-gray-500">  {{ $student->rating }}</div>
-              </td>
-
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">TechnicName</div>
-                <div class="text-sm text-gray-500">  {{ $student->technic->name }}</div>
-              </td>
-   
-   
-   
-           
+ 
 
 
               <td class="px-6 py-4 whitespace-nowrap">

@@ -2,7 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
 use App\Models\Internship;
+use App\Models\Practicalteacher;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class InternshipFactory extends Factory
@@ -23,7 +26,13 @@ class InternshipFactory extends Factory
     {
         return [
             //
-            'stagestatus' => $this->faker->name
+            'student_id' => Student::all()->random()->id,
+            'company_id' => Company::all()->random()->id,
+            'practicalteacher_id' => Practicalteacher::all()->random()->id, 
+     
+ 
+         
+
         ];
     }
 }
