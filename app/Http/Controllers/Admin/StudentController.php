@@ -21,13 +21,9 @@ class StudentController extends Controller
                 $students = Student::all(); 
 
                 $companies = Company::all(); 
-<<<<<<< HEAD
 
                 $technics = Technic::all(); 
                 return view('admin.students.index', compact('students', 'companies', 'technics')); 
-=======
-                return view('admin.students.index', compact('students', 'companies')); 
->>>>>>> 2fec473016d1be0d88fc80518408d8a3b0496bc2
     }
 
     /**
