@@ -15,6 +15,11 @@ class SchoolFactory extends Factory
     {
         return [
             //
+
+            'name' => 'Techniek College Rotterdam',
+            'educationname' => 'Applicatie en Mediabeheer', 
+            'groupname' => 'APM3A' 
+
         ];
     }
 }

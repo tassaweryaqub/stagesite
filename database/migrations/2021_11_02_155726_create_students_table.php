@@ -26,6 +26,9 @@ class CreateStudentsTable extends Migration
             $table->foreignId('technic_id')->constrained('technics')
             ->onUpdate('cascade')->onDelete('cascade'); 
 
+            $table->foreignId('school_id')->constrained('schools')
+            ->onUpdate('cascade')->onDelete('cascade'); 
+
 
 
             $table->string('review', 30); 

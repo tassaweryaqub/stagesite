@@ -75,6 +75,24 @@
             </select>
           </div>
 
+          <div class="w-full md:w-auto  px-3  mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="schools">
+             Schoolname
+            </label>
+            <select class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline " name="school_id" id="school_id">
+                @foreach ($schools as $school)  
+                <option value="{{ $school->id }}"
+                    @if (old('school_id') == $school->id)
+                    selected                 
+                    @endif
+                    >{{ $school->name}}
+                </option>    
+                @endforeach     
+            </select>
+          </div>
+
+
+
      
 
     <div class="ml-5 mt-5 flex justify-start">
