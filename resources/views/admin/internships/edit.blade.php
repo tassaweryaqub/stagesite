@@ -52,21 +52,7 @@
         </select>
       </div>
 
-      <div class="w-full md:w-auto  px-3  mb-6 md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="practicalteachername">
-         PracticalTeacherName
-        </label>
-        <select class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline " name="practicalteacher_id" id="practicalteacher_id">
-            @foreach ($practicalteachers as $practicalteacher)  
-            <option value="{{ $practicalteacher->id }}"
-                @if (old('student_id') == $practicalteacher->id)
-                selected                 
-                @endif
-                >{{ $practicalteacher->description }}
-            </option>    
-            @endforeach     
-        </select>
-      </div>
+      
 
       
  
@@ -85,6 +71,8 @@
         </label>
         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 @error('enddate') border-red-500 @enderror"  value="{{ old('enddate') }}" name="enddate" id="enddate"  type="date" placeholder="?"  >
       </div>
+
+
 
 
 

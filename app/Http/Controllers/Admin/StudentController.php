@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Company;
-use App\Models\Internship;
+use App\Models\Practicalteacher;
 use App\Models\School;
 use App\Models\Student;
 use App\Models\Technic;
@@ -28,8 +28,10 @@ class StudentController extends Controller
 
                 $schools = School::all(); 
 
+                $practicalteachers = Practicalteacher::all(); 
+
                 
-                return view('admin.students.index', compact('students', 'companies', 'technics', 'schools')); 
+                return view('admin.students.index', compact('students', 'companies', 'technics', 'schools', 'practicalteachers')); 
     }
 
     /**
@@ -49,11 +51,11 @@ class StudentController extends Controller
 
         $schools = School::all(); 
 
-        $internship = Internship::all(); 
+        $practicalteachers = Practicalteacher::all(); 
 
     
 
-        return view('admin.students.create', compact('students', 'companies', 'technics', 'schools', 'internships')); 
+        return view('admin.students.create', compact('students', 'companies', 'technics', 'schools', 'practicalteachers')); 
     }
 
     /**
@@ -73,7 +75,7 @@ class StudentController extends Controller
         $student->company_id = $request->company_id;
         $student->technic_id = $request->technic_id;
         $student->school_id =$request->school_id; 
-        $student->internship_id = $request->internship_id; 
+        $student->practicalteacher_id =$request->practicalteacher_id; 
       
 
         $student->save(); 

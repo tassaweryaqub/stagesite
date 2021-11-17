@@ -93,6 +93,7 @@ class InternshipController extends Controller
     {
         //! stuurt je door naar de update methode maar let op je maakt gebruik van relaties dus COMPANIES All erin zetten en Practicalteacher 
 
+
         $companies = Company::all(); 
 
         $practicalteachers = PracticalTeacher::all(); 

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Company;
 use App\Models\Internship;
+use App\Models\Practicalteacher;
 use App\Models\School;
 use App\Models\Student;
 use App\Models\Technic;
@@ -35,7 +36,7 @@ class StudentFactory extends Factory
             'company_id' => Company::all()->random()->id,
             'technic_id' => Technic::all()->random()->id,
             'school_id' => School::all()->random()->id, 
-            'internship_id' =>Internship::all()->random()->id, 
+            'practicalteacher_id' =>Practicalteacher::all()->random()->id, 
      
 
 
