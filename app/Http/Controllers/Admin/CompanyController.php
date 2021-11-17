@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CompanyStoreRequest;
 use App\Http\Requests\CompanyUpdateRequest;
 use App\Models\Company;
+use App\Models\Internship;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -19,6 +20,8 @@ class CompanyController extends Controller
     {
         //* We gebruiken de variable companies en de methode ALL om alle gegevens op te halen van de Company en returnen de index
         $companies = Company::all(); 
+
+  
         return view('admin.companies.index', compact('companies')); 
         
     }
@@ -32,6 +35,8 @@ class CompanyController extends Controller
     {
         //*  view returnen naar create.store 
         $companies = Company::all(); 
+
+  
         return view('admin.companies.create', compact('companies')); 
     }
 

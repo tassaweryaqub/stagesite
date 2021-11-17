@@ -29,6 +29,8 @@ class InternshipStoreRequest extends FormRequest
             'practicalteacher_id' => 'required|integer', 
             'begindate' => 'required', 
             'enddate' => 'required', 
+        
+
 
         
 

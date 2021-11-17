@@ -22,8 +22,9 @@ class InternshipController extends Controller
                 //* We gebruiken de variable internships en de methode ALL om alle gegevens op te halen van de Internship/ Practical en Student en returnen de index
                 $internships = Internship::all(); 
                 $practicalteachers = Practicalteacher::all(); 
+                $companies = Company::all(); 
      
-                return view('admin.internships.index', compact('internships', 'practicalteachers')); 
+                return view('admin.internships.index', compact('internships', 'practicalteachers', 'companies')); 
 
 
     }
@@ -40,8 +41,10 @@ class InternshipController extends Controller
 
         $practicalteachers = PracticalTeacher::all(); 
 
+        $companies = Company::all(); 
 
-        return view ('admin.internships.create', compact('companies', 'practicalteachers')); 
+
+        return view ('admin.internships.create', compact('companies', 'practicalteachers', 'companies')); 
 
     }
 
