@@ -20,16 +20,21 @@
                 InternShip_ID
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Student_ID
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Studentname
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Company_ID
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                CompanyName
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Company Details
+              </th>
+
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Internship Begindate
+              </th>
+
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Internship Enddate
               </th>
 
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -64,25 +69,32 @@
                     </div>
                   </div>
                 </div>
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">Student_ID</div>
-                <div class="text-sm text-gray-500">  {{ $internship->student_id }}</div>
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">StudentName</div>
-                <div class="text-sm text-gray-500">  {{ $internship->student->name }}</div>
-              </td>
+
 
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">Company_ID</div>
                 <div class="text-sm text-gray-500">  {{ $internship->company_id }}</div>
-            
               </td>
+
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">Company Name</div>
+                <div class="text-sm text-gray-500">  {{ $internship->company->name }}</div>
+              </td>
+
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">Company Details</div>
                 <div class="text-sm text-gray-500">  {{ $internship->company->details }}</div>
-         
+              </td>
+
+              
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">Internship Startdate</div>
+                <div class="text-sm text-gray-500">  {{ $internship->begindate }}</div>
+              </td>
+
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm text-gray-900">Internship Enddate</div>
+                <div class="text-sm text-gray-500">  {{ $internship->enddate }}</div>
               </td>
 
               <td class="px-6 py-4 whitespace-nowrap">
@@ -95,29 +107,20 @@
                 <div class="text-sm text-gray-500">  {{ $internship->practicalteacher->description}}</div>
               </td>
 
-
-
-
-
-
-
-
-
-
        
               <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-{{--            
-                  <a href="{{ route('categories.show', ['category'=> $category->id ]) }}">Show</a>
+           
+                  <a href="{{ route('internships.show', ['internship'=> $internship->id ]) }}">Show</a>
                 </span>
               </td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                <a href="{{ route('categories.edit', ['category'=> $category->id ]) }}">Edit</a>
+               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <a href="{{ route('internships.edit', ['internship'=> $internship->id ]) }}">Edit</a>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="{{ route('categories.delete', ['category'=> $category->id]) }}" class="text-red-600 hover:text-red-900">Delete</a>
-              </td> --}}
-            </tr>
+                <a href="{{ route('internships.delete', ['internship'=> $internship->id]) }}" class="text-red-600 hover:text-red-900">Delete</a>
+              </td> 
+            </tr> 
 
 
             @endforeach

@@ -6,6 +6,7 @@ use App\Models\Company;
 use App\Models\Internship;
 use App\Models\Practicalteacher;
 use App\Models\Student;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class InternshipFactory extends Factory
@@ -26,9 +27,10 @@ class InternshipFactory extends Factory
     {
         return [
             //
-            'student_id' => Student::all()->random()->id,
             'company_id' => Company::all()->random()->id,
             'practicalteacher_id' => Practicalteacher::all()->random()->id, 
+            'enddate' => Carbon::createFromTimeStamp($this->faker->dateTimeBetween('now', '+30 days')->getTimestamp()),
+            'begindate' => Carbon::createFromTimeStamp($this->faker->dateTimeBetween('now', '+0 days')->getTimestamp()),
      
  
          

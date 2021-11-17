@@ -30,6 +30,8 @@ Route::resource('admin/students', StudentController::class);
 Route::get('admin/companies/{company}/delete', [CompanyController::class, 'delete'])
 ->name ('companies.delete'); 
 
+Route::get('admin/internships/{internship}/delete', [InternshipController::class, 'delete'])
+->name ('internships.delete'); 
 
 
 

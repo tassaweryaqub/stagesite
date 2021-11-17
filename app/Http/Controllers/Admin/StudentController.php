@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Company;
+use App\Models\Internship;
 use App\Models\School;
 use App\Models\Student;
 use App\Models\Technic;
@@ -48,9 +49,11 @@ class StudentController extends Controller
 
         $schools = School::all(); 
 
+        $internship = Internship::all(); 
+
     
 
-        return view('admin.students.create', compact('students', 'companies', 'technics', 'schools')); 
+        return view('admin.students.create', compact('students', 'companies', 'technics', 'schools', 'internships')); 
     }
 
     /**
@@ -70,6 +73,7 @@ class StudentController extends Controller
         $student->company_id = $request->company_id;
         $student->technic_id = $request->technic_id;
         $student->school_id =$request->school_id; 
+        $student->internship_id = $request->internship_id; 
       
 
         $student->save(); 

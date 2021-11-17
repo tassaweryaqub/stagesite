@@ -15,7 +15,8 @@
 @section('content')
 
 <div class="flex flex-wrap -mx-3 mb-6 ml-5 mt-5">
-<form id="form"  class="w-full max-w-lg" action="{{ route('internships.store') }}" method="POST">
+<form id="form"  class="w-full max-w-lg" action="{{ route('internships.update', ['internship' => $internship->id ]) }}" method="POST">
+    @method('PUT')
     @csrf 
 
     <div class="w-full md:w-auto  px-3  mb-6 md:mb-0">

@@ -108,7 +108,8 @@
                 <div class="text-sm text-gray-900">GroupName</div>
                 <div class="text-sm text-gray-500">  {{ $student->school->groupname }}</div>
               </td>
-            
+
+       
             
    
    

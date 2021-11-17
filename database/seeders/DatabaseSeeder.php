@@ -21,9 +21,8 @@ class DatabaseSeeder extends Seeder
             TechnicSeeder::class, 
             SchoolSeeder::class, 
             PracticalteacherSeeder::class,
-            StudentSeeder::class,  
             InternshipSeeder::class, 
-
+            StudentSeeder::class,  
      
  
 

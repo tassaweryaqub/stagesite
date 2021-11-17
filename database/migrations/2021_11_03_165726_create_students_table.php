@@ -29,7 +29,8 @@ class CreateStudentsTable extends Migration
             $table->foreignId('school_id')->constrained('schools')
             ->onUpdate('cascade')->onDelete('cascade'); 
 
-
+            $table->foreignId('internship_id')->constrained('internships')
+            ->onUpdate('cascade')->onDelete('cascade'); 
 
             $table->string('review', 30); 
             $table->tinyInteger('rating');

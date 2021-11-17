@@ -3,10 +3,11 @@
 namespace Database\Factories;
 
 use App\Models\Company;
-
+use App\Models\Internship;
 use App\Models\School;
 use App\Models\Student;
 use App\Models\Technic;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class StudentFactory extends Factory
@@ -34,6 +35,10 @@ class StudentFactory extends Factory
             'company_id' => Company::all()->random()->id,
             'technic_id' => Technic::all()->random()->id,
             'school_id' => School::all()->random()->id, 
+            'internship_id' =>Internship::all()->random()->id, 
+     
+
+
 
      
 
