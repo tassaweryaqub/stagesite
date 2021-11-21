@@ -64,6 +64,14 @@ BIJV  :
       return $this->belongsTo(Company::class); 
   }
 
+  Als je gegevens gebruikt van een andere tabel LET OP de model relaties het moet een BelongsTo zijn als je bijv gegevens van 
+  Student wilt inzien in de Internship tabel. 
+
+  public function student()
+  {
+    return $this->belongsTo(Student::class)
+  }
+
 
 ## PHP artisan request aanmaken voor validatie 
 PHP artisan make:request TestStoreRequest 

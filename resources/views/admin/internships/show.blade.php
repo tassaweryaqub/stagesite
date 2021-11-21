@@ -14,6 +14,8 @@
         <p class="mt-2 text-md font-semibold text-gray-600"> {{ $internship->company->id }}</p><br>
         <h1 class="text-1xl font-bold">Company Name: </h1><br>
         <p class="mt-2 text-md font-semibold text-gray-600"> {{ $internship->company->name}}</p><br>
+        <h1 class="text-1xl font-bold">Student Name: </h1><br>
+        <p class="mt-2 text-md font-semibold text-gray-600"> {{ $internship->student->name}}</p><br>
         <h1 class="text-1xl font-bold">Company Details: </h1><br>
         <p class="mt-2 text-md font-semibold text-gray-600"> {{ $internship->company->details}}</p><br>
         <h1 class="text-1xl font-bold">Internship Begindate: </h1><br>

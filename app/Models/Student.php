@@ -9,7 +9,7 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','review', 'rating', 'company_id', 'technic_id', 'school_id', 'practicalteacher_id']; 
+    protected $fillable = ['name','review', 'rating', 'company_id', 'technic_id', 'school_id', 'practicalteacher_id', 'internship_id']; 
 
     public function company()
 
@@ -30,6 +30,11 @@ class Student extends Model
     public function practicalteacher()
     {
         return $this->belongsTo(Practicalteacher::class); 
+    }
+
+    public function internship()
+    {
+        return $this->hasMany(Internship::class); 
     }
 
 }

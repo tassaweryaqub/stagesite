@@ -28,8 +28,10 @@ class InternshipUpdateRequest extends FormRequest
                  // * let op hier kijken we in de store of de waardes ingevuld zijn 
                  'company_id' => 'required|integer',  
                  'practicalteacher_id' => 'required|integer', 
+                 'student_id' => 'required|integer', 
                  'begindate' => 'required', 
                  'enddate' => 'required', 
+  
            
        
      

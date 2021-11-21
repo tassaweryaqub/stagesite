@@ -8,6 +8,7 @@ use App\Http\Requests\InternshipUpdateRequest;
 use App\Models\Company;
 use App\Models\Internship;
 use App\Models\Practicalteacher;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class InternshipController extends Controller
@@ -23,8 +24,9 @@ class InternshipController extends Controller
                 $internships = Internship::all(); 
                 $practicalteachers = Practicalteacher::all(); 
                 $companies = Company::all(); 
+                $students = Student::all(); 
      
-                return view('admin.internships.index', compact('internships', 'practicalteachers', 'companies')); 
+                return view('admin.internships.index', compact('internships', 'practicalteachers', 'companies', 'students')); 
 
 
     }
@@ -41,10 +43,10 @@ class InternshipController extends Controller
 
         $practicalteachers = PracticalTeacher::all(); 
 
-        $companies = Company::all(); 
+        $students = Student::all(); 
 
 
-        return view ('admin.internships.create', compact('companies', 'practicalteachers', 'companies')); 
+        return view ('admin.internships.create', compact('companies', 'practicalteachers', 'students')); 
 
     }
 
@@ -59,6 +61,7 @@ class InternshipController extends Controller
         //
         $internship = new Internship(); 
         $internship->company_id = $request->company_id;
+        $internship->student_id= $request->student_id;
         $internship->practicalteacher_id = $request->practicalteacher_id; 
         $internship->begindate = $request->begindate; 
         $internship->enddate = $request->enddate; 
@@ -98,7 +101,9 @@ class InternshipController extends Controller
 
         $practicalteachers = PracticalTeacher::all(); 
 
-        return view('admin.internships.edit', compact('internship', 'companies', 'practicalteachers')); 
+        $students = Student::all(); 
+
+        return view('admin.internships.edit', compact('internship', 'companies', 'practicalteachers', 'students')); 
 
     }
 
@@ -117,6 +122,7 @@ class InternshipController extends Controller
         $internship->enddate = $request->enddate; 
         $internship->practicalteacher_id = $request->practicalteacher_id;
         $internship->company_id = $request->company_id; 
+        $internship->student_id = $request->student_id; 
         $internship->save(); 
     
             return redirect()->route('internships.index')->with('status', 'Internship Succesvol Geupdate!'); 
@@ -132,7 +138,9 @@ class InternshipController extends Controller
 
         $practicalteachers = PracticalTeacher::all(); 
 
-        return view('admin.internships.delete', compact('internship', 'companies', 'practicalteachers')); 
+        $students = Student::all(); 
+
+        return view('admin.internships.delete', compact('internship', 'companies', 'practicalteachers', 'students')); 
     }
 
     /**

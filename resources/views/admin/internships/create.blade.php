@@ -34,6 +34,23 @@
         </select>
       </div>
 
+      <div class="w-full md:w-auto  px-3  mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="studentname">
+         Student Name
+        </label>
+        <select class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline " name="student_id" id="student_id">
+            @foreach ($students as $student)  
+            <option value="{{ $student->id }}"
+                @if (old('student_id') == $student->id)
+                selected                 
+                @endif
+                >{{ $student->name }}
+            </option>    
+            @endforeach     
+        </select>
+      </div>
+
+
 
       <div class="w-full md:w-auto  px-3  mb-6 md:mb-0">
         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="practicalteachername">

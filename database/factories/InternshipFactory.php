@@ -28,6 +28,7 @@ class InternshipFactory extends Factory
         return [
             //
             'company_id' => Company::all()->random()->id,
+            'student_id' => Student::all()->random()->id,
             'practicalteacher_id' => Practicalteacher::all()->random()->id, 
             'enddate' => Carbon::createFromTimeStamp($this->faker->dateTimeBetween('now', '+30 days')->getTimestamp()),
             'begindate' => Carbon::createFromTimeStamp($this->faker->dateTimeBetween('now', '+0 days')->getTimestamp()),
