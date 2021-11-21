@@ -128,17 +128,17 @@
 
               <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-{{--            
-                  <a href="{{ route('categories.show', ['category'=> $category->id ]) }}">Show</a>
+          
+                  <a href="{{ route('students.show', ['student'=> $student->id ]) }}">Show</a>
                 </span>
               </td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                <a href="{{ route('categories.edit', ['category'=> $category->id ]) }}">Edit</a>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <a href="{{ route('students.edit', ['student'=> $student->id ]) }}">Edit</a>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="{{ route('categories.delete', ['category'=> $category->id]) }}" class="text-red-600 hover:text-red-900">Delete</a>
-              </td> --}}
-            </tr>
+                <a href="{{ route('students.delete', ['student'=> $student->id]) }}" class="text-red-600 hover:text-red-900">Delete</a>
+              </td>  
+            </tr> 
 
 
             @endforeach

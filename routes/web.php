@@ -33,6 +33,10 @@ Route::get('admin/companies/{company}/delete', [CompanyController::class, 'delet
 Route::get('admin/internships/{internship}/delete', [InternshipController::class, 'delete'])
 ->name ('internships.delete'); 
 
+Route::get('admin/students/{student}/delete', [StudentController::class, 'delete'])
+->name ('students.delete'); 
+
+
 
 
 Route::get('/dashboard', function () {

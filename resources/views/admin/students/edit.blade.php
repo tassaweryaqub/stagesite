@@ -15,7 +15,7 @@
 @section('content')
 
 <div class="flex flex-wrap -mx-3 mb-6 ml-5 mt-5">
-<form id="form"  class="w-full max-w-lg" action="{{ route('students.update') }}" method="POST">
+<form id="form"  class="w-full max-w-lg" action="{{ route('students.update' ,['student' => $student->id ]) }}" method="POST">
     @method('PUT')
     @csrf 
 
@@ -24,18 +24,8 @@
           StudentName
         </label>
         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white @error('name') border-red-500 @enderror"
-           name="name" id="name" value="{{ old('name') }}"  type="text" placeholder="StudentName" required >
+           name="name" id="name" value="{{ old('name', $student->name) }}"  type="text" placeholder="StudentName" required >
       </div>
-
-      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="companyname">
-          CompanyName 
-        </label>
-        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white @error('companyname') border-red-500 @enderror"
-           name="name" id="name" value="{{ old($company->name) }}"  type="text" placeholder="StudentName" required >
-      </div>
-
-
         
         <div class="w-full md:w-auto  px-3  mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="companyname">
@@ -150,9 +140,6 @@
           </div>
 
 
-
-
-     
 
     <div class="ml-5 mt-5 flex justify-start">
       <button id="submit" class="mt-10  bg-green-500 hover:bg-green-700 text-white font-bold  py-2 px-4 rounded" >

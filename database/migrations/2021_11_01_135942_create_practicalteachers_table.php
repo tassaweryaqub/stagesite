@@ -18,7 +18,7 @@ class CreatePracticalteachersTable extends Migration
         Schema::create('practicalteachers', function (Blueprint $table) {
             $table->id();
             $table->string('name', 45); 
-            $table->mediumText('description', 15); 
+            $table->string('description', 100); 
             $table->timestamps();
         });
     }

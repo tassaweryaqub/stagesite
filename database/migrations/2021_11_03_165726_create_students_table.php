@@ -29,7 +29,7 @@ class CreateStudentsTable extends Migration
             $table->foreignId('school_id')->constrained('schools')
             ->onUpdate('cascade')->onDelete('cascade'); 
 
-            $table->foreignId('practicalteacher_id')->constrained('practicalteachers')
+            $table->foreignId('practicalteacher_id')->nullable()->constrained('practicalteachers')
             ->onUpdate('cascade')->onDelete('cascade'); 
 
             $table->string('review', 30); 

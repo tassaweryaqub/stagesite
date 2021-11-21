@@ -91,7 +91,19 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        //* route aanroepen van Student show en alle gegevens van Externe Tabellen 
+
+        $companies = Company::all(); 
+
+        $technics = Technic::all(); 
+
+        $schools = School::all(); 
+
+        $practicalteachers = Practicalteacher::all(); 
+
+        return view('admin.students.show', compact('student', 'companies', 'technics', 'schools', 'practicalteachers')); 
+
+
     }
 
     /**
@@ -103,6 +115,17 @@ class StudentController extends Controller
     public function edit(Student $student)
     {
         //
+
+        $companies = Company::all(); 
+
+        $technics = Technic::all(); 
+
+        $schools = School::all(); 
+
+        $practicalteachers = Practicalteacher::all(); 
+
+        return view('admin.students.edit', compact('student', 'companies', 'technics', 'schools', 'practicalteachers')); 
+
     }
 
     /**
@@ -114,7 +137,37 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        // ! Alle waardes van de tabel student  en foreign keys hier neerzetten 
+
+        $student->review = $request->review;
+        $student->rating = $request->rating; 
+        $student->name =$request->name; 
+        $student->practicalteacher_id = $request->practicalteacher_id;
+        $student->company_id = $request->company_id; 
+        $student->technic_id = $request->technic_id; 
+        $student->school_id = $request->school_id; 
+
+        $student->save(); 
+
+        return redirect()->route('students.index')->with('status', 'Student Succesvol Geupdate!'); 
+
+
+    }
+
+    public function delete(Student $student)
+
+    {
+
+        $companies = Company::all(); 
+
+        $technics = Technic::all(); 
+
+        $schools = School::all(); 
+
+        $practicalteachers = Practicalteacher::all(); 
+
+
+        return view('admin.students.delete',compact('student', 'companies', 'technics', 'schools', 'practicalteachers')); 
     }
 
     /**
@@ -126,5 +179,7 @@ class StudentController extends Controller
     public function destroy(Student $student)
     {
         //
+        $student->delete(); 
+        return redirect()->route('students.index')->with('status', 'Student Succesvol Verwijderd  !' ); 
     }
 }
